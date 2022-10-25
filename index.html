@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<label>Employee ID</label>
+<input type="text" id="empID" >
+<br>
+<label>Absent Days</label>
+<input type="text" id="absentDay">
+<br>
+<input type="button" value="Calculate" onclick="calculateSalary()">
+
+
+
+<script>
+function payEmployee(){
+this.employeeID = " ";
+this.employeeName = " ";
+this.employeeSalary = 0;
+
+}
+var employeeArr = new Array()
+
+var employeeOne = new payEmployee()
+employeeOne.employeeID = "123"
+employeeOne.employeeName = "Tom"
+employeeOne.employeeSalary = 200
+
+//.push put employeeOne into array
+
+employeeArr.push(employeeOne)
+
+
+var employeeTwo = new payEmployee()
+employeeTwo.employeeID = "234"
+employeeTwo.employeeName = "Cat"
+employeeTwo.employeeSalary = 300
+
+//.push put employeeOne into array
+
+employeeArr.push(employeeTwo)
+
+var employeeThree = new payEmployee()
+employeeThree.employeeID = "456"
+employeeThree.employeeName = "Olivia"
+employeeThree.employeeSalary = 250
+
+//.push put employeeOne into array
+
+employeeArr.push(employeeThree)
+
+
+function calculateSalary(){
+var id =document.getElementById("empID").value
+var absent =parseInt(document.getElementById("absentDay").value)
+
+//loop /length is howmany object in array/length is 3 value 3 employees/ 0 position 1/ 1 position 2/ 2 is position 3
+
+for (i=0; i < employeeArr.length;i++ ){
+
+    //employeeArr is the group name/ [i] which employee have id match at position i
+    if (id==employeeArr[i]){
+        salary=employeeArr[i].employeeSalary
+        total= (30-absent)*salary
+        alert("Salary is" + total)
+        break 
+        //break will stop the loop
+    }
+
+}
+if (i==employeeArr.length)
+alert("invalid ID")
+}
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
